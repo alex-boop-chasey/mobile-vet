@@ -1,7 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
 
-const currentPath = Astro.url.pathname;
+const normalizePath = (path: string) => (path.length > 1 ? path.replace(/\/+$/, '') : path);
+const currentPath = normalizePath(Astro.url.pathname);
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
@@ -31,7 +32,7 @@ const navItems = [
           <a
             href={item.href}
             class={`px-3 lg:px-4 py-2 rounded-full text-sm lg:text-base font-medium transition-colors ${
-              currentPath === item.href
+              currentPath === normalizePath(item.href)
                 ? 'bg-pink-300 text-white'
                 : 'text-gray-700 hover:bg-pink-100 hover:text-gray-900'
             }`}
@@ -69,7 +70,7 @@ const navItems = [
         <a
           href={item.href}
           class={`block px-4 py-3 rounded-full text-base font-medium transition-colors ${
-            currentPath === item.href
+            currentPath === normalizePath(item.href)
               ? 'bg-purple text-white'
               : 'text-gray-700 hover:bg-pink-100 hover:text-gray-900'
           }`}
