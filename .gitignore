@@ -1,0 +1,34 @@
+# Build output
+dist/
+.astro/
+
+# Dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.production
+.env.local
+.env.*.local
+
+# MacOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.log
+*.tmp
+.cache/
+
+# API Keys (keeping this safe)
+pexels-api-key.txt
+Claude-instructions.md

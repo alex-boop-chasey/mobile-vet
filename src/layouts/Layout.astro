@@ -1,0 +1,129 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  ogImage?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title,
+  description,
+  keywords = 'mobile vet Bundaberg, veterinary services Bundaberg QLD, pet care in Bundaberg, emergency vet Bundaberg, Dr Heidi mobile vet',
+  ogImage = '/og-image.jpg',
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).toString()
+} = Astro.props;
+
+const fullTitle = `${title} | Dr Heidi's Mobile Veterinary Services`;
+const siteName = "Dr Heidi's Mobile Veterinary Services";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- SEO Meta Tags -->
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:locale" content="en_AU" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonicalURL} />
+  <meta property="twitter:title" content={fullTitle} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={new URL(ogImage, Astro.site)} />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": ["VeterinaryCare", "LocalBusiness"],
+    "name": "Dr Heidi's Mobile Veterinary Services",
+    "description": "Professional mobile veterinary services in Bundaberg, QLD. We care for them because they love you.",
+    "image": new URL('/hero-image.jpg', Astro.site),
+    "telephone": "0418 108 008",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "65 Bathurst St",
+      "addressLocality": "Bundaberg Central",
+      "addressRegion": "QLD",
+      "postalCode": "4670",
+      "addressCountry": "AU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -24.8667,
+      "longitude": 152.3500
+    },
+    "url": Astro.site,
+    "areaServed": {
+      "@type": "City",
+      "name": "Bundaberg",
+      "containedIn": {
+        "@type": "State",
+        "name": "Queensland"
+      }
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ],
+    "additionalType": "http://www.productontology.org/id/Veterinary_medicine",
+    "availableService": {
+      "@type": "Service",
+      "name": "Mobile Veterinary Services",
+      "description": "Professional and affordable health care for pets including cats, dogs, rabbits, guinea pigs, birds, horses, and snakes"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Veterinary Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Pet Health Care & Consultations"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Emergency Veterinary Services"
+          }
+        }
+      ]
+    }
+  })} />
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50">
+  <Header />
+  <main class="flex-grow">
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>

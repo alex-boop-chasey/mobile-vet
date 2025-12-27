@@ -1,0 +1,6 @@
+# robots.txt for Dr Heidi's Mobile Veterinary Services
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://drheidisvet.com.au/sitemap-index.xml

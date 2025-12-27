@@ -1,0 +1,209 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const upcomingTopics = [
+  {
+    title: 'Pet Care Tips for Bundaberg Summers',
+    description: 'How to keep your pets cool and safe during hot Queensland summers',
+    category: 'Seasonal Care',
+    icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707'
+  },
+  {
+    title: 'Understanding Pet Vaccinations',
+    description: 'Essential vaccination schedules for dogs and cats in Bundaberg',
+    category: 'Health & Wellness',
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
+  },
+  {
+    title: 'Signs Your Pet Needs Emergency Care',
+    description: 'When to call your Bundaberg mobile vet for urgent assistance',
+    category: 'Emergency',
+    icon: 'M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+  },
+  {
+    title: 'Nutrition Guide for Senior Pets',
+    description: 'Best dietary practices for aging cats and dogs',
+    category: 'Nutrition',
+    icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+  },
+  {
+    title: 'Benefits of Mobile Vet Services',
+    description: 'Why mobile veterinary care is perfect for Bundaberg pet owners',
+    category: 'Mobile Services',
+    icon: 'M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2'
+  },
+  {
+    title: 'Dental Care for Pets',
+    description: 'Maintaining your pet\'s oral health in Bundaberg',
+    category: 'Dental Health',
+    icon: 'M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+  }
+];
+---
+
+<Layout
+  title="Pet Care Blog - Dr Heidi's Mobile Vet Bundaberg"
+  description="Coming soon: Pet care tips, health advice, and veterinary insights for Bundaberg pet owners. Stay tuned for helpful articles from Dr Heidi's Mobile Veterinary Services."
+  keywords="pet care blog Bundaberg, veterinary tips, pet health articles, Bundaberg pet advice, dog care tips, cat care guide"
+>
+  <!-- Page Header -->
+  <section class="bg-gradient-to-br from-primary-50 to-secondary-50 py-12 sm:py-16 lg:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+          Pet Care Blog
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-700 leading-relaxed">
+          Expert advice and helpful tips for Bundaberg pet owners
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Soon Section -->
+  <section class="py-12 sm:py-16 lg:py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <!-- Main Notice -->
+        <div class="bg-gradient-to-br from-primary-50 to-white p-8 sm:p-10 lg:p-12 rounded-2xl shadow-lg text-center mb-12">
+          <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Our Blog is Coming Soon!
+          </h2>
+          <p class="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
+            We're working on creating valuable content to help Bundaberg pet owners care for their beloved companions. Check back soon for expert veterinary advice, seasonal tips, and pet health insights.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact"
+              class="inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-primary hover:bg-primary-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+            >
+              Contact Us for Advice
+            </a>
+            <a
+              href="/services"
+              class="inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-secondary hover:bg-secondary-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+            >
+              View Our Services
+            </a>
+          </div>
+        </div>
+
+        <!-- Upcoming Topics -->
+        <div class="mb-12">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">
+            Upcoming Blog Topics
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {upcomingTopics.map((topic, index) => (
+              <div class="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                <div class="flex items-start space-x-4">
+                  <div class={`w-12 h-12 ${index % 2 === 0 ? 'bg-primary' : 'bg-secondary'} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={topic.icon} />
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class={`inline-block px-3 py-1 ${index % 2 === 0 ? 'bg-primary-100 text-primary-700' : 'bg-secondary-100 text-secondary-700'} text-xs font-semibold rounded-full mb-2`}>
+                      {topic.category}
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">{topic.title}</h3>
+                    <p class="text-sm text-gray-600">{topic.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Newsletter Signup Placeholder -->
+        <div class="bg-gradient-to-r from-primary to-primary-600 p-8 sm:p-10 rounded-2xl shadow-xl text-center">
+          <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Stay Updated
+          </h3>
+          <p class="text-base sm:text-lg text-primary-50 mb-6 max-w-2xl mx-auto">
+            Want to be notified when we publish new pet care articles? Contact us to join our mailing list for helpful tips and updates from Dr Heidi's Mobile Veterinary Services in Bundaberg.
+          </p>
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-white hover:bg-gray-100 text-primary font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+          >
+            Get in Touch
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Tips Section -->
+  <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-secondary-50 to-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">
+          Quick Pet Care Tips for Bundaberg Owners
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+              <span class="text-white font-bold text-xl">1</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Regular Check-ups</h3>
+            <p class="text-sm text-gray-600">Schedule annual veterinary visits to catch health issues early.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+              <span class="text-white font-bold text-xl">2</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Stay Hydrated</h3>
+            <p class="text-sm text-gray-600">Ensure fresh water is always available, especially in Bundaberg's warm climate.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+              <span class="text-white font-bold text-xl">3</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Parasite Prevention</h3>
+            <p class="text-sm text-gray-600">Keep up with flea, tick, and worming treatments year-round.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-12 sm:py-16 lg:py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        Have Questions About Pet Care?
+      </h2>
+      <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        Don't wait for our blog - contact our Bundaberg veterinary team today for expert advice and professional care.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary hover:bg-primary-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+        >
+          Contact Us
+        </a>
+        <a
+          href="tel:0418108008"
+          class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-secondary hover:bg-secondary-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          Call 0418 108 008
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
