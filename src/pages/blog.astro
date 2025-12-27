@@ -43,17 +43,21 @@ const upcomingTopics = [
 ---
 
 <Layout
-  title="Pet Care Blog - Dr Heidi's Mobile Vet Bundaberg"
+  title="Pet Care Blog - Dr Heidi's Mobile Vet"
   description="Coming soon: Pet care tips, health advice, and veterinary insights for Bundaberg pet owners. Stay tuned for helpful articles from Dr Heidi's Mobile Veterinary Services."
   keywords="pet care blog Bundaberg, veterinary tips, pet health articles, Bundaberg pet advice, dog care tips, cat care guide"
 >
   <!-- Page Header -->
   <section class="pt-0 pb-8 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-brand-lime rounded-3xl p-8 sm:p-12 lg:p-16">
+      <div class="bg-brand-lime rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden">
+        <div class="pointer-events-none absolute inset-0 opacity-[0.08]">
+          <Icon name="lucide:paw-print" class="absolute top-4 left-6 w-20 h-20 text-gray-900 rotate-[-12deg]" aria-hidden="true" />
+          <Icon name="lucide:paw-print" class="absolute bottom-6 right-6 w-24 h-24 text-gray-900 rotate-[-8deg]" aria-hidden="true" />
+        </div>
         <div class="max-w-3xl mx-auto text-center">
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Pet Care Blog
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+            Pet Care <span class="text-[#31804F]">Blog</span>
           </h1>
           <p class="text-lg sm:text-xl text-gray-700 leading-relaxed">
             Expert advice and helpful tips for Bundaberg pet owners
@@ -64,7 +68,7 @@ const upcomingTopics = [
   </section>
 
   <!-- Coming Soon Section -->
-  <section class="py-8 bg-white">
+  <section class="pt-8 pb-4 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">
         <!-- Main Notice -->
@@ -106,7 +110,7 @@ const upcomingTopics = [
         </div>
 
         <!-- Newsletter Signup Placeholder -->
-        <div class="bg-black p-8 sm:p-10 rounded-2xl shadow-xl text-center">
+        <div class="bg-[#1D2D4E] p-8 sm:p-10 rounded-2xl shadow-xl text-center">
           <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">
             Stay Updated
           </h3>
@@ -115,7 +119,7 @@ const upcomingTopics = [
           </p>
           <a
             href="/contact"
-            class="inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-white hover:bg-gray-50 text-gray-900 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all text-base sm:text-lg"
+            class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white hover:bg-gray-50 text-gray-900 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all text-base sm:text-lg"
           >
             Get in Touch
             <Icon name="lucide:arrow-right" class="w-5 h-5 ml-2" />
@@ -126,16 +130,16 @@ const upcomingTopics = [
   </section>
 
   <!-- Quick Tips Section -->
-  <section class="py-8 bg-white">
+  <section class="pt-4 pb-8 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-gradient-to-br from-secondary-50 to-white rounded-3xl p-8 sm:p-12 lg:p-16">
+      <div class="bg-gradient-to-br from-secondary-50 to-white rounded-3xl p-6 sm:p-8 lg:p-10">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">
-            Quick Pet Care Tips for Bundaberg Owners
+            Quick Pet Care Tips <br /> For Bundaberg Owners
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="bg-brand-yellow p-6 rounded-xl shadow-md">
-              <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+              <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4">
                 <span class="text-white font-bold text-xl">1</span>
               </div>
               <h3 class="text-lg font-bold text-gray-900 mb-2">Regular Check-ups</h3>
@@ -143,7 +147,7 @@ const upcomingTopics = [
             </div>
 
           <div class="bg-brand-lime p-6 rounded-xl shadow-md">
-              <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+              <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4">
                 <span class="text-white font-bold text-xl">2</span>
               </div>
               <h3 class="text-lg font-bold text-gray-900 mb-2">Stay Hydrated</h3>
@@ -151,7 +155,7 @@ const upcomingTopics = [
             </div>
 
           <div class="bg-brand-blue p-6 rounded-xl shadow-md">
-              <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+              <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4">
                 <span class="text-white font-bold text-xl">3</span>
               </div>
               <h3 class="text-lg font-bold text-gray-900 mb-2">Parasite Prevention</h3>
@@ -175,16 +179,16 @@ const upcomingTopics = [
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="/contact"
-          class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary hover:bg-primary-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+          class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all text-base sm:text-lg"
         >
           Contact Us
         </a>
         <a
           href="tel:0418108008"
-          class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-secondary hover:bg-secondary-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+          class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all text-base sm:text-lg"
         >
           <Icon name="lucide:phone" class="w-5 h-5 mr-2" />
-          Call 0418 108 008
+          Call Now
         </a>
       </div>
     </div>

@@ -32,7 +32,7 @@ const navItems = [
             href={item.href}
             class={`px-3 lg:px-4 py-2 rounded-full text-sm lg:text-base font-medium transition-colors ${
               currentPath === item.href
-                ? 'bg-purple text-white'
+                ? 'bg-pink-300 text-white'
                 : 'text-gray-700 hover:bg-pink-100 hover:text-gray-900'
             }`}
           >
@@ -44,11 +44,10 @@ const navItems = [
       <!-- Call Button (Desktop & Tablet) -->
       <a
         href="tel:0418108008"
-        class="hidden sm:flex items-center space-x-2 bg-gray-900 hover:bg-gray-800 text-white px-4 lg:px-6 py-2 lg:py-2.5 rounded-full font-semibold transition-colors text-sm lg:text-base shadow-lg hover:shadow-xl"
+        class="hidden sm:flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all text-base sm:text-lg"
       >
-        <Icon name="lucide:phone" class="w-4 h-4 lg:w-5 lg:h-5" />
-        <span class="hidden lg:inline">Call Now</span>
-        <span class="lg:hidden">Call</span>
+        <Icon name="lucide:phone" class="w-5 h-5 mr-2" />
+        <span>Call Now</span>
       </a>
 
       <!-- Mobile Menu Button -->
@@ -80,10 +79,10 @@ const navItems = [
       ))}
       <a
         href="tel:0418108008"
-        class="flex items-center justify-center space-x-2 bg-gray-900 hover:bg-gray-800 text-white px-4 py-3 rounded-full font-semibold transition-colors shadow-lg mt-4"
+        class="flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all text-base sm:text-lg mt-4"
       >
-        <Icon name="lucide:phone" class="w-5 h-5" />
-        <span>Call 0418 108 008</span>
+        <Icon name="lucide:phone" class="w-5 h-5 mr-2" />
+        <span>Call Now</span>
       </a>
     </nav>
   </div>

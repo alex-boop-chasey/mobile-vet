@@ -4,17 +4,21 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <Layout
-  title="About Us - Mobile Veterinary Services Bundaberg"
+  title="About Us - Mobile Veterinary Services"
   description="Learn about Dr Heidi's Mobile Veterinary Services in Bundaberg. Our dedicated team provides professional, affordable pet care with a caring approach. We've been serving the Bundaberg community for years."
   keywords="about Dr Heidi's mobile vet, veterinary team Bundaberg, pet care Bundaberg, local vet Bundaberg, community vet services"
 >
   <!-- Page Header -->
   <section class="pt-0 pb-8 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-brand-lavender rounded-3xl p-8 sm:p-12 lg:p-16">
+      <div class="bg-brand-lavender rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden">
+        <div class="pointer-events-none absolute inset-0 opacity-[0.08]">
+          <Icon name="lucide:paw-print" class="absolute top-4 left-6 w-20 h-20 text-gray-900 rotate-[-12deg]" aria-hidden="true" />
+          <Icon name="lucide:paw-print" class="absolute bottom-6 right-6 w-24 h-24 text-gray-900 rotate-[-8deg]" aria-hidden="true" />
+        </div>
         <div class="max-w-3xl mx-auto text-center">
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            About Dr Heidi's Mobile Veterinary Services
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+            About Dr Heidi's <br /> <span class="text-[#5E328A]">Mobile Vet Service</span>
           </h1>
           <p class="text-lg sm:text-xl text-gray-700 leading-relaxed">
             We care for them because they love you
@@ -147,21 +151,31 @@ import { Icon } from 'astro-icon/components';
               Being so strongly integrated with our local community in Bundaberg is important to us and our clients. Our customers know by experience that they can rely on us for sound advice and treatment options and that their pet is in the very best hands with our team.
             </p>
 
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 pt-8 border-t border-gray-200">
+            <div id="community-stats" class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 pt-8 border-t border-gray-200">
               <div class="text-center">
-                <div class="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">1000+</div>
+                <div class="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">
+                  <span class="stat-number" data-start="840" data-end="1000" data-suffix="+" data-duration="1200">1000+</span>
+                </div>
                 <div class="text-sm sm:text-base text-gray-600">Happy Clients</div>
               </div>
               <div class="text-center">
-                <div class="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">8+</div>
+                <div class="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">
+                  <span class="stat-number" data-start="3" data-end="8" data-suffix="+" data-duration="1200">8+</span>
+                </div>
                 <div class="text-sm sm:text-base text-gray-600">Pet Species</div>
               </div>
               <div class="text-center">
-                <div class="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">24/7</div>
+                <div class="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">
+                  <span class="stat-number" data-start="18" data-end="24" data-duration="1200">24</span>
+                  <span class="text-purple-600">/</span>
+                  <span class="stat-number" data-start="3" data-end="7" data-duration="1200">7</span>
+                </div>
                 <div class="text-sm sm:text-base text-gray-600">Emergency Care</div>
               </div>
               <div class="text-center">
-                <div class="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">100%</div>
+                <div class="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">
+                  <span class="stat-number" data-start="70" data-end="100" data-suffix="%" data-duration="1200">100%</span>
+                </div>
                 <div class="text-sm sm:text-base text-gray-600">Dedicated Care</div>
               </div>
             </div>
@@ -199,3 +213,42 @@ import { Icon } from 'astro-icon/components';
     </div>
   </section>
 </Layout>
+
+<script>
+  const statsSection = document.getElementById('community-stats');
+  const statNumbers = statsSection?.querySelectorAll('.stat-number') ?? [];
+  let statsAnimated = false;
+
+  const animateStat = (el) => {
+    const start = Number(el.dataset.start ?? 0);
+    const end = Number(el.dataset.end ?? 0);
+    const duration = Number(el.dataset.duration ?? 1200);
+    const suffix = el.dataset.suffix ?? '';
+    const startTime = performance.now();
+
+    const step = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const value = Math.round(start + (end - start) * progress);
+      el.textContent = `${value}${suffix}`;
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  const onIntersect = (entries) => {
+    if (statsAnimated) return;
+    if (entries[0]?.isIntersecting) {
+      statsAnimated = true;
+      statNumbers.forEach(animateStat);
+    }
+  };
+
+  if (statsSection) {
+    const observer = new IntersectionObserver(onIntersect, { threshold: 0.4 });
+    observer.observe(statsSection);
+  }
+</script>
