@@ -1,12 +1,14 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import icon from 'astro-icon';
 
 export default defineConfig({
   site: 'https://drheidisvet.com.au',
   integrations: [
     tailwind(),
-    sitemap()
+    sitemap(),
+    icon()
   ],
   output: 'static',
   build: {

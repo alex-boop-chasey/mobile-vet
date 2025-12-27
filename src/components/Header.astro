@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 const currentPath = Astro.url.pathname;
 const navItems = [
   { label: 'Home', href: '/' },
@@ -14,10 +16,8 @@ const navItems = [
     <div class="flex items-center justify-between h-16 sm:h-20">
       <!-- Logo -->
       <a href="/" class="flex items-center space-x-2 group">
-        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition-colors">
-          <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-          </svg>
+        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-300 rounded-full flex items-center justify-center group-hover:bg-pink-400 transition-colors">
+          <Icon name="lucide:heart" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
         </div>
         <div class="hidden sm:block">
           <div class="text-lg lg:text-xl font-bold text-gray-900">Dr Heidi's Mobile Vet</div>
@@ -30,10 +30,10 @@ const navItems = [
         {navItems.map(item => (
           <a
             href={item.href}
-            class={`px-3 lg:px-4 py-2 rounded-lg text-sm lg:text-base font-medium transition-colors ${
+            class={`px-3 lg:px-4 py-2 rounded-full text-sm lg:text-base font-medium transition-colors ${
               currentPath === item.href
-                ? 'bg-primary text-white'
-                : 'text-gray-700 hover:bg-gray-100 hover:text-primary'
+                ? 'bg-purple text-white'
+                : 'text-gray-700 hover:bg-pink-100 hover:text-gray-900'
             }`}
           >
             {item.label}
@@ -44,11 +44,9 @@ const navItems = [
       <!-- Call Button (Desktop & Tablet) -->
       <a
         href="tel:0418108008"
-        class="hidden sm:flex items-center space-x-2 bg-secondary hover:bg-secondary-600 text-white px-4 lg:px-6 py-2 lg:py-2.5 rounded-lg font-semibold transition-colors text-sm lg:text-base shadow-lg hover:shadow-xl"
+        class="hidden sm:flex items-center space-x-2 bg-gray-900 hover:bg-gray-800 text-white px-4 lg:px-6 py-2 lg:py-2.5 rounded-full font-semibold transition-colors text-sm lg:text-base shadow-lg hover:shadow-xl"
       >
-        <svg class="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
+        <Icon name="lucide:phone" class="w-4 h-4 lg:w-5 lg:h-5" />
         <span class="hidden lg:inline">Call Now</span>
         <span class="lg:hidden">Call</span>
       </a>
@@ -56,15 +54,11 @@ const navItems = [
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-button"
-        class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+        class="md:hidden inline-flex items-center justify-center p-2 rounded-full text-gray-700 hover:bg-pink-100 focus:outline-none focus:ring-2 focus:ring-purple"
         aria-label="Toggle menu"
       >
-        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <Icon name="lucide:menu" id="menu-icon" class="w-6 h-6" />
+        <Icon name="lucide:x" id="close-icon" class="w-6 h-6 hidden" />
       </button>
     </div>
   </div>
@@ -75,10 +69,10 @@ const navItems = [
       {navItems.map(item => (
         <a
           href={item.href}
-          class={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+          class={`block px-4 py-3 rounded-full text-base font-medium transition-colors ${
             currentPath === item.href
-              ? 'bg-primary text-white'
-              : 'text-gray-700 hover:bg-gray-100 hover:text-primary'
+              ? 'bg-purple text-white'
+              : 'text-gray-700 hover:bg-pink-100 hover:text-gray-900'
           }`}
         >
           {item.label}
@@ -86,11 +80,9 @@ const navItems = [
       ))}
       <a
         href="tel:0418108008"
-        class="flex items-center justify-center space-x-2 bg-secondary hover:bg-secondary-600 text-white px-4 py-3 rounded-lg font-semibold transition-colors shadow-lg mt-4"
+        class="flex items-center justify-center space-x-2 bg-gray-900 hover:bg-gray-800 text-white px-4 py-3 rounded-full font-semibold transition-colors shadow-lg mt-4"
       >
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
+        <Icon name="lucide:phone" class="w-5 h-5" />
         <span>Call 0418 108 008</span>
       </a>
     </nav>
