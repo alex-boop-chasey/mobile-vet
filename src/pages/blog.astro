@@ -48,48 +48,36 @@ const upcomingTopics = [
   keywords="pet care blog Bundaberg, veterinary tips, pet health articles, Bundaberg pet advice, dog care tips, cat care guide"
 >
   <!-- Page Header -->
-  <section class="bg-gradient-to-br from-primary-50 to-secondary-50 py-12 sm:py-16 lg:py-20">
+  <section class="pt-0 pb-8 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-          Pet Care Blog
-        </h1>
-        <p class="text-lg sm:text-xl text-gray-700 leading-relaxed">
-          Expert advice and helpful tips for Bundaberg pet owners
-        </p>
+      <div class="bg-brand-lime rounded-3xl p-8 sm:p-12 lg:p-16">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+            Pet Care Blog
+          </h1>
+          <p class="text-lg sm:text-xl text-gray-700 leading-relaxed">
+            Expert advice and helpful tips for Bundaberg pet owners
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Coming Soon Section -->
-  <section class="py-12 sm:py-16 lg:py-20 bg-white">
+  <section class="py-8 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">
         <!-- Main Notice -->
-        <div class="bg-gradient-to-br from-primary-50 to-white p-8 sm:p-10 lg:p-12 rounded-2xl shadow-lg text-center mb-12">
+        <div class="text-center mb-24">
           <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
             <Icon name="lucide:book-open" class="w-10 h-10 text-white" />
           </div>
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Our Blog is Coming Soon!
           </h2>
-          <p class="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
+          <p class="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-4">
             We're working on creating valuable content to help Bundaberg pet owners care for their beloved companions. Check back soon for expert veterinary advice, seasonal tips, and pet health insights.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              class="inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-primary hover:bg-primary-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
-            >
-              Contact Us for Advice
-            </a>
-            <a
-              href="/services"
-              class="inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-secondary hover:bg-secondary-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
-            >
-              View Our Services
-            </a>
-          </div>
         </div>
 
         <!-- Upcoming Topics -->
@@ -99,7 +87,7 @@ const upcomingTopics = [
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {upcomingTopics.map((topic, index) => (
-              <div class="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+              <div class={`${index % 4 === 0 ? 'bg-brand-yellow' : index % 4 === 1 ? 'bg-brand-lime' : index % 4 === 2 ? 'bg-brand-blue' : 'bg-brand-lavender'} p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow`}>
                 <div class="flex items-start space-x-4">
                   <div class={`w-12 h-12 ${index % 2 === 0 ? 'bg-primary' : 'bg-secondary'} rounded-lg flex items-center justify-center flex-shrink-0`}>
                     <Icon name={topic.iconName} class="w-6 h-6 text-white" />
@@ -118,16 +106,16 @@ const upcomingTopics = [
         </div>
 
         <!-- Newsletter Signup Placeholder -->
-        <div class="bg-gradient-to-r from-primary to-primary-600 p-8 sm:p-10 rounded-2xl shadow-xl text-center">
+        <div class="bg-black p-8 sm:p-10 rounded-2xl shadow-xl text-center">
           <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">
             Stay Updated
           </h3>
-          <p class="text-base sm:text-lg text-primary-50 mb-6 max-w-2xl mx-auto">
+          <p class="text-base sm:text-lg text-white mb-6 max-w-2xl mx-auto">
             Want to be notified when we publish new pet care articles? Contact us to join our mailing list for helpful tips and updates from Dr Heidi's Mobile Veterinary Services in Bundaberg.
           </p>
           <a
             href="/contact"
-            class="inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-white hover:bg-gray-100 text-primary font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+            class="inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-white hover:bg-gray-50 text-gray-900 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all text-base sm:text-lg"
           >
             Get in Touch
             <Icon name="lucide:arrow-right" class="w-5 h-5 ml-2" />
@@ -138,35 +126,37 @@ const upcomingTopics = [
   </section>
 
   <!-- Quick Tips Section -->
-  <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-secondary-50 to-white">
+  <section class="py-8 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">
-          Quick Pet Care Tips for Bundaberg Owners
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-xl shadow-md">
-            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
-              <span class="text-white font-bold text-xl">1</span>
+      <div class="bg-gradient-to-br from-secondary-50 to-white rounded-3xl p-8 sm:p-12 lg:p-16">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">
+            Quick Pet Care Tips for Bundaberg Owners
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-brand-yellow p-6 rounded-xl shadow-md">
+              <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+                <span class="text-white font-bold text-xl">1</span>
+              </div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">Regular Check-ups</h3>
+              <p class="text-sm text-gray-600">Schedule annual veterinary visits to catch health issues early.</p>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">Regular Check-ups</h3>
-            <p class="text-sm text-gray-600">Schedule annual veterinary visits to catch health issues early.</p>
-          </div>
 
-          <div class="bg-white p-6 rounded-xl shadow-md">
-            <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
-              <span class="text-white font-bold text-xl">2</span>
+          <div class="bg-brand-lime p-6 rounded-xl shadow-md">
+              <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+                <span class="text-white font-bold text-xl">2</span>
+              </div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">Stay Hydrated</h3>
+              <p class="text-sm text-gray-600">Ensure fresh water is always available, especially in Bundaberg's warm climate.</p>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">Stay Hydrated</h3>
-            <p class="text-sm text-gray-600">Ensure fresh water is always available, especially in Bundaberg's warm climate.</p>
-          </div>
 
-          <div class="bg-white p-6 rounded-xl shadow-md">
-            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
-              <span class="text-white font-bold text-xl">3</span>
+          <div class="bg-brand-blue p-6 rounded-xl shadow-md">
+              <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+                <span class="text-white font-bold text-xl">3</span>
+              </div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">Parasite Prevention</h3>
+              <p class="text-sm text-gray-600">Keep up with flea, tick, and worming treatments year-round.</p>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">Parasite Prevention</h3>
-            <p class="text-sm text-gray-600">Keep up with flea, tick, and worming treatments year-round.</p>
           </div>
         </div>
       </div>
@@ -174,7 +164,7 @@ const upcomingTopics = [
   </section>
 
   <!-- CTA Section -->
-  <section class="py-12 sm:py-16 lg:py-20 bg-white">
+  <section class="py-8 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
         Have Questions About Pet Care?
